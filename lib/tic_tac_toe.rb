@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 
 WIN_COMBINATIONS=[
 [0,1,2],
@@ -126,7 +126,7 @@ def draw?(board)
 end
 
 def over?(board)
-  if  draw?(board)==true || won?(board) || full?(board)==true
+  if draw?(board)==true || won?(board) || full?(board)==true
     return true
   end
 end
@@ -139,7 +139,7 @@ def winner(board)
 end
 
 def play(board)
-  # binding.pry
+  binding.pry
   if draw?(board)==true
     puts "Cat's Game!"
   end
