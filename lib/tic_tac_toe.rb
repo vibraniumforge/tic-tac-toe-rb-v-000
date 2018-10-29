@@ -139,7 +139,7 @@ def winner(board)
 end
 
 def play(board)
-  binding.pry
+  # binding.pry
   if draw?(board)==true
     puts "Cat's Game!"
   end
