@@ -139,7 +139,7 @@ def winner(board)
 end
 
 def play(board)
-  puts board
+  # puts board
   if draw?(board)==true
     puts "Cat's Game!"
   end
