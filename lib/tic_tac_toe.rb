@@ -53,7 +53,6 @@ def turn(board)
     else
       character="O"
     end
-    # binding.pry
   if valid_move?(board, index)
     move(board, index, character)
     display_board(board)
@@ -63,14 +62,13 @@ def turn(board)
 end
 
 def turn_count(board)
-  turns=0
-  # binding.pry
+  num_of_turns=0
   board.each_with_index do |square, index|
     if board[index]=="X" || board[index]=="O"
-      turns+=1
+      num_of_turns+=1
     end
   end
-  return turns
+  return num_of_turns
 end
 
 def current_player(board)
@@ -117,7 +115,6 @@ def draw?(board)
   # end
   won=won?(board)
   full=full?(board)
-  # binding.pry
   if won==false && full==true
     return true
   elsif won==false && full==false
@@ -130,13 +127,30 @@ def draw?(board)
 end
 
 def over?(board)
-  if won?(board) ==true || draw?(board)==true||full?(board)==true
+  # binding.pry
+  if  draw?(board)==true || won?(board) ==true || full?(board)==true
     return true
   end
 end
 
 def winner(board)
-  if won?(board)
-    board[won?(board)[0]]
+  if won?(board)==true
+    return board[won?(board)[0]]
+  end
+end
+
+def play(board)
+  # binding.pry
+  if draw?(board)==true
+    puts "Cat's Game!"
+  end
+  while over?(board)==false
+    turn(board)
+  end
+  if over?(board)==true && winner(board)=="O"
+    puts "Congratulations O!"
+  end
+  if over?(board)==true && winner(board)=="X"
+    puts "Congratulations X!"
   end
 end
