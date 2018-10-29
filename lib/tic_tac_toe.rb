@@ -154,4 +154,4 @@ def play(board)
   end
 end
 
-play(["X", "O", "X", "O", "X", "O", "X", " ", " "])
+# play(["X", "O", "X", "O", "X", "O", "X", " ", " "])
