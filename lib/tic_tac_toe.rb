@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 WIN_COMBINATIONS=[
 [0,1,2],
@@ -88,7 +88,6 @@ def won?(board)
     position_1=board[win_index_1]
     position_2=board[win_index_2]
     position_3=board[win_index_3]
-
     if position_1==position_2 && position_2==position_3 && position_1 !=" "
       return win_combination
     end
@@ -127,20 +126,19 @@ def draw?(board)
 end
 
 def over?(board)
-  # binding.pry
-  if  draw?(board)==true || won?(board) ==true || full?(board)==true
+  if  draw?(board)==true || won?(board) || full?(board)==true
     return true
   end
 end
 
 def winner(board)
-  if won?(board)==true
-    return board[won?(board)[0]]
+  if won?(board)
+    z=board[won?(board)[0]]
+    return z
   end
 end
 
 def play(board)
-  # binding.pry
   if draw?(board)==true
     puts "Cat's Game!"
   end
