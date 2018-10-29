@@ -139,6 +139,7 @@ def winner(board)
 end
 
 def play(board)
+  binding.pry
   if draw?(board)==true
     puts "Cat's Game!"
   end
@@ -153,4 +154,4 @@ def play(board)
   end
 end
 
-# play(["X", "O", "X", "O", "X", "O", "X", " ", " "])
+play(["X", "O", "X", "O", "X", "O", "X", " ", " "])
