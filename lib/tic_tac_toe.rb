@@ -147,10 +147,10 @@ def play(board)
   while over?(board)==false
     turn(board)
   end
-  if over?(board)==true && winner(board)=="O"
+  if over?(board) && winner(board)=="O"
     puts "Congratulations O!"
   end
-  if over?(board)==true && winner(board)=="X"
+  if over?(board) && winner(board)=="X"
     puts "Congratulations X!"
   end
 end
