@@ -139,13 +139,14 @@ def winner(board)
 end
 
 def play(board)
+  while over?(board)==false
+    turn(board)
+  end
   # binding.pry
   if draw?(board)==true
     puts "Cat's Game!"
   end
-  while over?(board)==false
-    turn(board)
-  end
+  
   if over?(board) && winner(board)=="O"
     puts "Congratulations O!"
   end
