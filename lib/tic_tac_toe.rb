@@ -143,15 +143,10 @@ def play(board)
     turn(board)
   end
   # binding.pry
-  if draw?(board)==true
+  if won?(board)
+    puts "Congratulations #{winner(board)!}"
+  elsif draw?(board)==true
     puts "Cat's Game!"
-  end
-  
-  if over?(board) && winner(board)=="O"
-    puts "Congratulations O!"
-  end
-  if over?(board) && winner(board)=="X"
-    puts "Congratulations X!"
   end
 end
 
